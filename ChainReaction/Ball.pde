@@ -18,6 +18,7 @@ class Ball {
    y = random((height - r) + r/2);
    dx = random(10) - 5;
    dy = random(10) - 5;
+   state = 0;
   }
   
   void move(){
@@ -34,4 +35,25 @@ class Ball {
       dy = -1 * dy;
   }
   
+  void setState(int newState){
+    state = newState; 
+  }
+  
+  void setX(int newX){
+   x = newX; 
+  }
+  
+  void setY(int newY){
+   y = newY; 
+  }
+  
+  void explode(){
+    if(state < 10){
+      rad ++;
+      state++;
+    }
+    else{
+      rad = 0;
+    }
+  }
 }
