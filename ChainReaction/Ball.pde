@@ -48,12 +48,12 @@ class Ball {
   }
   
   void explode(){
-    if(state < 10){
-      rad ++;
-      state++;
+    if(state == 1 && rad < 40){
+      rad += 0.25;
     }
-    else{
-      rad = 0;
-    }
+    else if(state == 1 && rad >= 40)
+      state = 2;
+    else if(state == 2 && rad > 0)
+      rad -= 0.5;
   }
 }
